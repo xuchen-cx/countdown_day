@@ -83,6 +83,7 @@ if (isMobile()) {
   /*-webkit-filter: grayscale(100%);*/  
   /*filter:grayscale(100%); //背景灰度设置*/  
   z-index:-11;
+  object-fit: cover;
 }
 
 .app-bg-source {

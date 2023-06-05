@@ -3,13 +3,13 @@
     <span style="font-size: 24px;">在一起已经</span>
     <div class="card-container-time">
       <div class="card-time">{{ time.day }}</div>
-      <h2>天</h2>
+      <h1>天</h1>
       <div class="card-time">{{ time.hour }}</div>
-      <h2>时</h2>
+      <h1>时</h1>
       <div class="card-time">{{ time.minute }}</div>
-      <h2>分</h2>
+      <h1>分</h1>
       <div class="card-time">{{ time.second }}</div>
-      <h2>秒</h2>
+      <h1>秒</h1>
     </div>
   </div>
 </template>
@@ -64,8 +64,8 @@ onUnmounted(() => {
     width: 20%;
     height: 30%;
     border-radius: 5%;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
     font-size: 48px;
     display: flex;
     justify-content: center;
