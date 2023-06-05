@@ -1,10 +1,26 @@
+<template>
+  <div class="card-container">
+    <span style="font-size: 24px;">在一起已经</span>
+    <div class="card-container-time">
+      <div class="card-time">{{ time.day }}</div>
+      <h2>天</h2>
+      <div class="card-time">{{ time.hour }}</div>
+      <h2>时</h2>
+      <div class="card-time">{{ time.minute }}</div>
+      <h2>分</h2>
+      <div class="card-time">{{ time.second }}</div>
+      <h2>秒</h2>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import {ITimeFormat} from './index.interface'
 import { onMounted, onUnmounted, reactive } from 'vue';
 import { getElapsedTime } from '../../utils';
 
 
-const time = reactive<ITimeFormat>({ day: 0, minute: 0, hour: 0, second: 0 });
+const time: ITimeFormat = reactive({ day: 0, minute: 0, hour: 0, second: 0 });
 
 const updateTimeFunc = () => {
   const elapsedTime = getElapsedTime(2021, 6, 28, 23, 28, 0);
@@ -27,22 +43,6 @@ onUnmounted(() => {
 })
 
 </script>
-
-<template>
-  <div class="card-container">
-    <span style="font-size: 24px;">在一起已经</span>
-    <div class="card-container-time">
-      <div class="card-time">{{ time.day }}</div>
-      <h2>天</h2>
-      <div class="card-time">{{ time.hour }}</div>
-      <h2>时</h2>
-      <div class="card-time">{{ time.minute }}</div>
-      <h2>分</h2>
-      <div class="card-time">{{ time.second }}</div>
-      <h2>秒</h2>
-    </div>
-  </div>
-</template>
 
 <style scoped>
   .card-container {

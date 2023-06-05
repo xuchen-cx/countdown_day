@@ -1,40 +1,50 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { Ref, ref } from 'vue';
 import Card from './components/Card/index.vue'
+import Modal from './components/Modal/index.vue'
 
-const videoRef = ref<any>(null);
+const videoRef = ref(null);
+const modalVisible: Ref<boolean> = ref(true);
+const translateVisible: Ref<boolean> = ref(true);
 
 
-
-onMounted(() => {
-  document.addEventListener("mouseenter", () => {
-    const video = videoRef.value as HTMLVideoElement;
-    if (video) {
-      if (video.paused) {
-        video.volume = 0.1
-        video.play()
-      }
+// 播放背景图片交互
+const playBgVideo = async () => {
+  const video = videoRef.value as unknown as HTMLVideoElement;
+  if (video) {
+    if (video.paused) {
+      video.volume = 0.5
+      video.loop = true
+      await video.play()
     }
-  }, { once: true });
+  }
+  closeModal()
+};
 
-  document.addEventListener("touchmove", () => {
-    const video = videoRef.value as HTMLVideoElement;
-    if (video) {
-      if (video.paused) {
-        video.volume = 0.1
-        video.play()
-      }
-    }
-  }, { once: true });
-})
+const closeModal = () => {
+  modalVisible.value = false;
+};
+
+const showTranslation = () => {
+  translateVisible.value = false
+}
+
 </script>
 
 <template>
-
-  <Card />
-  <video autoplay loop class="app-bg" ref="videoRef">
+  <video class="app-bg" ref="videoRef">
     <source src="./assets/bg.MP4" type="video/mp4" class=".app-bg-source"/>
   </video>
+  <Card />
+  <Modal :visible="modalVisible" title="是否自动播放背景" >
+    <p style="color: black;">美人さん、バックグラウンドでのビデオ再生をオンにしますか?</p>
+    <p style="color: black;" v-if="!translateVisible">美女，你是否选择开启背景视频播放?</p>
+    <a href="javascript:void(0);" v-if="translateVisible" @click="showTranslation">看不懂？点这里⬇</a>
+    <template #footer>
+      <button @click="playBgVideo" style="margin-right: 5px;">播放</button>
+      <button @click="closeModal">算了，不放了吵死</button>
+    </template>
+  </Modal>
 </template>
 
 <style scoped>
