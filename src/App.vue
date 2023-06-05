@@ -54,7 +54,7 @@ if (isMobile()) {
 </script>
 
 <template>
-  <video class="app-bg" ref="videoRef">
+  <video class="app-bg" ref="videoRef" playsinline webkit-playsinline>
     <source :src="bgSrc" type="video/mp4" class=".app-bg-source"/>
   </video>
   <Card />
@@ -83,7 +83,6 @@ if (isMobile()) {
   /*-webkit-filter: grayscale(100%);*/  
   /*filter:grayscale(100%); //背景灰度设置*/  
   z-index:-11;
-  object-fit: cover;
 }
 
 .app-bg-source {
