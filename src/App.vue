@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { Ref, onMounted, onUnmounted, ref } from 'vue';
 import Card from './components/Card/index.vue'
 import Modal from './components/Modal/index.vue'
+import Loading from './components/Loading/index.vue'
 import bgPcSrc from '../public/bg_pc.mp4'
 import bgPhoneSrc from '../public/bg_phone.mp4'
 
@@ -9,7 +10,24 @@ const videoRef = ref(null);
 const modalVisible: Ref<boolean> = ref(true);
 const translateVisible: Ref<boolean> = ref(true);
 const bgSrc: Ref<string> = ref('');
+const loadingVisible: Ref<boolean> = ref(true);
 
+
+onMounted(() => {
+  const video = videoRef.value as unknown as HTMLVideoElement;
+  video.addEventListener('canplay', () => {
+    if (loadingVisible.value) {
+      loadingVisible.value = false;
+    }
+  })
+})
+
+onUnmounted(() => {
+  const video = videoRef.value as unknown as HTMLVideoElement;
+  video.removeEventListener('canplay', () => {
+    loadingVisible.value = false;
+  })
+})
 
 // 播放背景图片交互
 const playBgVideo = async () => {
@@ -54,6 +72,7 @@ if (isMobile()) {
 </script>
 
 <template>
+  <Loading :loading="loadingVisible"/>
   <video class="app-bg" ref="videoRef" playsinline webkit-playsinline>
     <source :src="bgSrc" type="video/mp4" class=".app-bg-source"/>
   </video>
