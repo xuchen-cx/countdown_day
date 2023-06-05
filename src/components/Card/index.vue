@@ -46,8 +46,8 @@ onUnmounted(() => {
 
 <style scoped>
   .card-container {
-    width: 800px;
-    height: 500px;
+    width: 60%;
+    height: 50%;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
@@ -61,8 +61,8 @@ onUnmounted(() => {
   }
 
   .card-time {
-    width: 100px;
-    height: 150px;
+    width: 20%;
+    height: 30%;
     border-radius: 5%;
     margin-right: 10px;
     margin-left: 10px;

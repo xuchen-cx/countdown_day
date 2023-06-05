@@ -2,11 +2,13 @@
 import { Ref, ref } from 'vue';
 import Card from './components/Card/index.vue'
 import Modal from './components/Modal/index.vue'
-import bgSrc from '../public/bg.mp4'
+import bgPcSrc from '../public/bg_pc.mp4'
+import bgPhoneSrc from '../public/bg_phone.mp4'
 
 const videoRef = ref(null);
 const modalVisible: Ref<boolean> = ref(true);
 const translateVisible: Ref<boolean> = ref(true);
+const bgSrc: Ref<string> = ref('');
 
 
 // 播放背景图片交互
@@ -28,6 +30,25 @@ const closeModal = () => {
 
 const showTranslation = () => {
   translateVisible.value = false
+}
+
+function isMobile() {
+  const userAgentInfo = navigator.userAgent;
+  const agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+  let flag = false;
+  for (let i = 0; i < agents.length; i++) {
+    if (userAgentInfo.indexOf(agents[i]) > 0) {
+      flag = true;
+      break;
+    }
+  }
+  return flag;
+}
+
+if (isMobile()) {
+  bgSrc.value = bgPhoneSrc
+} else {
+  bgSrc.value = bgPcSrc
 }
 
 </script>
