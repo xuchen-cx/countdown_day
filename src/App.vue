@@ -74,10 +74,8 @@ if (isMobile()) {
   position: fixed;  
   right: 0px;  
   bottom: 0px;  
-  min-width: 100%;  
-  min-height: 100%;  
-  height: auto;  
-  width: auto;  
+  height: 100vh;
+  width: 100vw;  
   /*加滤镜*/
   /*filter: blur(15px); //背景模糊设置 */
   /*-webkit-filter: grayscale(100%);*/  

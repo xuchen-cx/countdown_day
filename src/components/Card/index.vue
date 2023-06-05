@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <span style="font-size: 24px;">在一起已经</span>
+    <span style="font-size: 24px;">在一起❤已经</span>
     <div class="card-container-time">
       <div class="card-time">{{ time.day }}</div>
       <h1>天</h1>
