@@ -2,6 +2,7 @@
 import { Ref, ref } from 'vue';
 import Card from './components/Card/index.vue'
 import Modal from './components/Modal/index.vue'
+import bgSrc from '../public/bg.mp4'
 
 const videoRef = ref(null);
 const modalVisible: Ref<boolean> = ref(true);
@@ -33,10 +34,10 @@ const showTranslation = () => {
 
 <template>
   <video class="app-bg" ref="videoRef">
-    <source src="./assets/bg.MP4" type="video/mp4" class=".app-bg-source"/>
+    <source :src="bgSrc" type="video/mp4" class=".app-bg-source"/>
   </video>
   <Card />
-  <Modal :visible="modalVisible" title="是否自动播放背景" >
+  <Modal :visible="modalVisible" title="是否播放视频背景" >
     <p style="color: black;">美人さん、バックグラウンドでのビデオ再生をオンにしますか?</p>
     <p style="color: black;" v-if="!translateVisible">美女，你是否选择开启背景视频播放?</p>
     <a href="javascript:void(0);" v-if="translateVisible" @click="showTranslation">看不懂？点这里⬇</a>

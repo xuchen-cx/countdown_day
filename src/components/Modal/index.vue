@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, watch } from 'vue';
+import { watch } from 'vue';
 
 const props = defineProps({
   visible: {
