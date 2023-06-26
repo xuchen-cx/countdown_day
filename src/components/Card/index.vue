@@ -1,15 +1,15 @@
 <template>
   <div class="card-container">
-    <span style="font-size: 24px;">在一起❤已经</span>
+    <span style="font-size: 2rem;">在一起❤已经</span>
     <div class="card-container-time">
       <div class="card-time">{{ time.day }}</div>
-      <h1>天</h1>
+      <span style="font-size: 2rem;">天</span>
       <div class="card-time">{{ time.hour }}</div>
-      <h1>时</h1>
+      <span style="font-size: 2rem;">时</span>
       <div class="card-time">{{ time.minute }}</div>
-      <h1>分</h1>
+      <span style="font-size: 2rem;">分</span>
       <div class="card-time">{{ time.second }}</div>
-      <h1>秒</h1>
+      <span style="font-size: 2rem;">秒</span>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ onUnmounted(() => {
 
 <style scoped>
   .card-container {
-    width: 60%;
+    width: 800px;
     height: 50%;
     border-radius: 5%;
     display: flex;
@@ -55,18 +55,19 @@ onUnmounted(() => {
   }
 
   .card-container-time {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .card-time {
-    width: 20%;
+    width: auto;
     height: 30%;
     border-radius: 5%;
-    margin-right: 20px;
-    margin-left: 20px;
-    font-size: 36px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
