@@ -21,12 +21,32 @@ export function getElapsedTime(
   const second = Math.floor(elapsedTime / 1000) % 60;
   const minute = Math.floor(elapsedTime / (1000 * 60)) % 60;
   const hour = Math.floor(elapsedTime / (1000 * 60 * 60)) % 24;
-  const day = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+  const day = Math.floor(elapsedTime / (1000 * 60 * 60 * 24)) % 365;
+  const year = Math.floor(elapsedTime / (1000 * 60 * 60 * 24 * 365))
 
   return {
+    year,
     day,
     hour,
     minute,
     second
   }
+}
+
+export function encrypt(str: string, key: string): string {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    const charCode = str.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+    result += String.fromCharCode(charCode);
+  }
+  return result;
+}
+
+export function decrypt(str: string, key: string): string {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    const charCode = str.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+    result += String.fromCharCode(charCode);
+  }
+  return result;
 }

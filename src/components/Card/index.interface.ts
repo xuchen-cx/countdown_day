@@ -3,4 +3,5 @@ export interface ITimeFormat {
   hour: number;
   minute: number;
   second: number;
+  year: number
 }

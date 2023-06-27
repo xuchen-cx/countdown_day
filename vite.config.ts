@@ -16,5 +16,10 @@ export default defineConfig({
         additionalData: `@import "./src/var.scss";`
       }
     }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
 })
