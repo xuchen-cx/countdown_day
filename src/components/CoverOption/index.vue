@@ -185,7 +185,7 @@ const handlePlayOrPause = async () => {
   .music {
     width: 6.5rem;
     position: absolute;
-    right: 90%;
+    left: 80%;
     cursor: pointer;
   }
 
