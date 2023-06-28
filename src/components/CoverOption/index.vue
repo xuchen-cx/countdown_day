@@ -8,7 +8,9 @@ import Image from '../Image/index.vue';
 import LiuZhouSrc from '../../assets/liuzhou.jpg';
 import QingDaoSrc from '../../assets/qingdao.jpg';
 import WeihaiSrc from '../../assets/weihai.jpg';
+import Weihai2Src from '../../assets/weihai2.jpg';
 import ShenZhenSrc from '../../assets/shenzhen.jpg';
+import ShenZhen2Src from '../../assets/shenzhen2.jpg';
 import XiaMen1Src from '../../assets/xiamen1.jpg';
 import XiaMen2Src from '../../assets/xiamen2.jpg';
 import OneYearSrc from '../../assets/oneYear.jpg';
@@ -33,7 +35,9 @@ const imgArr: IImageProps[] = [
   { src: LiuZhouSrc, description: 'in 柳州' },
   { src: QingDaoSrc, description: 'in 青岛' },
   { src: ShenZhenSrc, description: 'in 深圳' },
-  { src: WeihaiSrc, description: 'in 威海' },
+  { src: ShenZhen2Src, description: 'in 深圳欢乐谷' },
+  { src: WeihaiSrc, description: 'in 威海沙滩' },
+  { src: Weihai2Src, description: 'in 威海民宿' },
   { src: XiaMen1Src, description: 'from 厦门去漳州动车上' },
   { src: XiaMen2Src, description: 'in 厦门黄厝海边' },
 ];
