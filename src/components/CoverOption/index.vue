@@ -14,6 +14,7 @@ import ShenZhen2Src from '../../assets/shenzhen2.jpg';
 import XiaMen1Src from '../../assets/xiamen1.jpg';
 import XiaMen2Src from '../../assets/xiamen2.jpg';
 import OneYearSrc from '../../assets/oneYear.jpg';
+import TwoYearSrc from '../../assets/2Year.jpg';
 import SongSrc from '../../assets/song.mp3';
 import NailSvg from '../../assets/nail.svg';
 import MusicSvg from '../../assets/music.svg';
@@ -31,6 +32,7 @@ const isLogin = ref(false);
 const loginVal = ref('');
 const loginMessageVisible = ref(false);
 const imgArr: IImageProps[] = [
+  { src: TwoYearSrc, description: '二周年图' },
   { src: OneYearSrc, description: '一周年图' },
   { src: LiuZhouSrc, description: 'in 柳州' },
   { src: QingDaoSrc, description: 'in 青岛' },
